@@ -82,4 +82,33 @@
          'error': browser will treat redirect as error
          'manual':  browser does not follow redirects automatically
 
-15. request.re
+15. request.refferer:  return the referrer of the request
+        'no-referrer': no referrer will be sent
+        'client': the referrer will be the URL of the document that initiated the fetch
+        'about:client': the referrer will be the URL of the document that initiated the fetch
+        const data = request.referrer
+        console.log(data);
+
+16. request.referrerPolicy:  specifies which referrer to send when fetching the request
+        'no-referrer': no referrer will be sent
+        'client': the referrer will be the URL of the document that initiated the fetch
+        'about:client': the referrer will be the URL of the document that initiated the fetch
+        const data = request.referrerPolicy
+        console.log(data);
+
+17. request.signal:  return the signal associated with request, which is an
+        AbortSignal object indicating whether or not request has been aborted
+        const data = request.signal
+        console.log(data);
+
+18. request.url:  return the url of the request as a string
+        const data = request.url
+        console.log(data);
+
+19. request.method:  return the method of the request
+        const data = request.method
+        console.log(data);
+
+20. request.text():  read data if text from the request
+        const data = await request.text()
+        console.log(data);
