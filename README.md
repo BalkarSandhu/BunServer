@@ -1,15 +1,18 @@
 // Extract data From Request obj when post req is made
 
 1. Array Buffer
+
     const arrBuff = await request.arrayBuffer();
     const buff = Buffer.from(arrBuff);
     console.log(buff.toString())
 
 2. Text Blob
-    const textBlob= await request.blob()
+
+    const textBlob= await request.blob();
     console.log(await textBlob.text());
 
 3. From Body
+
     const body= request.body;
     const reader = body?.getReader()
     const obj = await reader?.read()
@@ -17,6 +20,7 @@
     console.log(buff.toString())
 
 4. from Json()
+
     const json = await request.json();
     console.log(json);
     const data = request.bodyUsed;
@@ -24,6 +28,7 @@
 
 5. request.bodyUsed :-> indicates wheater body is used or not
     return true or false -> in my case its only working with json() only
+
     const data= request.bodyUsed
     console.log(data);   //false
 
@@ -40,6 +45,7 @@
          console.log(data);  // default
 
 7. request.clone() -> clone the request
+
       const data= request.clone()
       console.log(data);
 
@@ -53,12 +59,15 @@
         to fetch like '', 'audio', 'script', 'video'
 
 10. request.formData(): read data if form data from the request
+
         const data = await request.formData()
         console.log(data);
 
 11. request.headers : Print Headers
+
       const data = request.headers
       console.log(data);
+
         Headers {
         "user-agent": "PostmanRuntime/7.33.0",
         "accept": "*/*",
@@ -86,6 +95,7 @@
         'no-referrer': no referrer will be sent
         'client': the referrer will be the URL of the document that initiated the fetch
         'about:client': the referrer will be the URL of the document that initiated the fetch
+
         const data = request.referrer
         console.log(data);
 
@@ -93,22 +103,27 @@
         'no-referrer': no referrer will be sent
         'client': the referrer will be the URL of the document that initiated the fetch
         'about:client': the referrer will be the URL of the document that initiated the fetch
+
         const data = request.referrerPolicy
         console.log(data);
 
 17. request.signal:  return the signal associated with request, which is an
         AbortSignal object indicating whether or not request has been aborted
+
         const data = request.signal
         console.log(data);
 
 18. request.url:  return the url of the request as a string
+
         const data = request.url
         console.log(data);
 
 19. request.method:  return the method of the request
+
         const data = request.method
         console.log(data);
 
 20. request.text():  read data if text from the request
+
         const data = await request.text()
         console.log(data);
